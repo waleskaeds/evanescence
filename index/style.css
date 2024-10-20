@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+* {
+    font-family: "Bodoni Moda", serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: black;
+    background: #FBE0BC;
+}
+
+.header {
+    background: #FBE0BC;
+    padding-inline: 16px;
+    margin: 0;
+}
+
+.logo-header {
+    width: 300px;
+}
+
+.nav {
+    max-width: 1900px;
+    height: 80px;
+    margin-inline: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-list a {
+    font-size: 18px;
+    padding-block: 16px;
+    text-decoration: none;
+    font-family: "Bodoni Moda", serif;
+    color: black;
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+}
+
+.hamburger::before, .hamburger::after {
+    content: "  ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+@media (max-width: 750px) {
+    .hamburger{
+        display: block;
+        z-index: 1;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+    }
+    
+    .nav-list a {
+        font-size: 35px;
+        color: #FBE0BC;
+    }
+
+    .nav.active .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        pointer-events: all;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+    }
+
+    .nav.active .hamburger {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburger::before{
+        transform: rotate(135deg);
+    }
+    .nav.active .hamburger::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
+
+footer {
+    background-color: black;
+    height: 50px;
+}
+
+.ul-footer {
+    padding-top: 10px;
+    padding-inline: 350px;
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ul-footer a {
+    font-size: 12px;
+    padding-block: 16px;
+    text-decoration: none;
+    font-family: "Bodoni Moda", serif;
+    color: #FBE0BC;
+}
+
+section {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 100vw;
+    display: flex;          /* Define a section como flex container */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+}
+
+/* -------------------------------- */
+/* --------------HOME-------------- */
+
+.poster {
+    width: 60vw;
+    border-radius: 15px;
+}
+
+/* -------------------------------- */
+/* -------------SOBRE-------------- */
+.div-sobre {
+    width: 65vw;
+    display: flex;               /* Define a div como um contêiner flexível */
+    flex-direction: column;      /* Coloca os itens em coluna (texto em cima, imagens abaixo) */
+    align-items: center;         /* Centraliza horizontalmente */
+    text-align: center;          /* Centraliza o texto */
+}
+.sobre-img  {
+    border-radius: 15px;
+    width: 30vw;
+    height: 30vw;
+}
+.sobre-fallen-img {
+    border-radius: 15px;
+    width: 30vw;
+    height: 30vw;
+}
+
+/* -------------------------------- */
+/* -------------ALBUNS------------- */
+
+.informacoes-album p {
+    margin: 0; 
+}
+.informacoes-album a{
+    font-size: 18px;
+    /* padding-block: 16px; */
+    text-decoration: none;
+    font-family: "Bodoni Moda", serif;
+    color: rgb(37, 16, 142);
+}
+.nome-album {
+    font-size: 20px;
+    font-weight: 700;
+}
+.foto-album {
+    width: 20vw;
+}
