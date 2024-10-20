@@ -50,7 +50,7 @@ body {
     display: none;
     border: none;
     background: none;
-    border-top: 3px solid #fff;
+    border-top: 3px solid black;
 }
 
 .hamburger::before, .hamburger::after {
@@ -58,7 +58,7 @@ body {
     display: block;
     width: 30px;
     height: 3px;
-    background: #fff;
+    background: black;
     margin-top: 5px;
     position: relative;
     transition: 0.3s;
@@ -71,6 +71,7 @@ body {
     }
 
     .nav-list {
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -89,6 +90,7 @@ body {
     }
 
     .nav.active .nav-list {
+        display: flex;
         position: fixed;
         top: 0;
         left: 0;
@@ -111,9 +113,11 @@ body {
     }
 
     .nav.active .hamburger::before{
+        background: #fff;
         transform: rotate(135deg);
     }
     .nav.active .hamburger::after{
+        background: #fff;
         transform: rotate(-135deg);
         top: -7px;
     }
@@ -121,31 +125,31 @@ body {
 
 footer {
     background-color: black;
-    height: 50px;
+    padding: 10px 0; /* Adiciona um padding vertical */
 }
 
 .ul-footer {
-    padding-top: 10px;
-    padding-inline: 350px;
+    padding: 0; /* Remove o padding superior */
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte em telas menores */
+    justify-content: center; /* Centraliza os itens */
     list-style: none;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .ul-footer a {
     font-size: 12px;
-    padding-block: 16px;
+    padding: 8px; /* Ajusta o padding para um melhor espaçamento */
     text-decoration: none;
     font-family: "Bodoni Moda", serif;
     color: #FBE0BC;
 }
 
+
 section {
     margin-top: 50px;
     margin-bottom: 30px;
     width: 100vw;
+    min-height: 90vh;
     display: flex;          /* Define a section como flex container */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center;
